@@ -1,7 +1,7 @@
-from email.policy import default
-import sys
 from dataclasses import dataclass, field
 import argparse
+from pathlib import Path
+
 
 parser = argparse.ArgumentParser(
     description='Find domain names from your monitored browsing.')
@@ -20,7 +20,8 @@ class PackageItem:
 
 items: list[PackageItem] = []
 
-with open(args.input) as f:
+inputFile = Path(args.input).resolve()
+with open(inputFile) as f:
     lines = f.readlines()
     for l in lines:
         for keyword in args.keyword_list:
