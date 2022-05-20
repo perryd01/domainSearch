@@ -1,6 +1,8 @@
 # DomainSearch
 Monitor your network activity and list out domain names of websites you have visited. A search term is recommended to be used but it can list out every single one. Not all domains are 100% owned by the searched company but can be related in some ways (SSL, login stuff).
-
+## Dependencies
+- tshark^3.6
+- python^3.10
 ## Usage
 ### Log your traffic into a file
 ```
