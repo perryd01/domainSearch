@@ -1,5 +1,5 @@
 # DomainSearch
-Find domain names from your monitored browsing. Not all domains is 100% owned by the searched company but can be related in some ways (SSL, login stuff).
+Monitor your network activity and list out domain names of websites you have visited. A search term is recommended to be used but it can list out every single one. Not all domains are 100% owned by the searched company but can be related in some ways (SSL, login stuff).
 
 ## Usage
 ### Log your traffic into a file
