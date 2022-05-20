@@ -27,7 +27,7 @@ with open(inputFile) as f:
         for keyword in args.keyword_list:
             # filter empty or incomplete rows
             # filter outgoing packets, has no real data for us
-            if keyword in l and (l.split('\t')[0] != '') and ('192' not in l.split('\t')[0]):
+            if keyword in l and (l.split('\t')[0] != '') and ('192.168.0.' not in l.split('\t')[0]):
                 formattedLine = l.strip().split('\t')
                 # filter out empty empty columns
                 rawItem = list(filter(None, formattedLine[3:7]))
