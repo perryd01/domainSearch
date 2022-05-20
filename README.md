@@ -16,7 +16,7 @@ $ python3 filter.py -i <output_filename_from_generate> -kw <search_term1> <searc
 where
 - i means inputFile name and can be set as `-i dump`
 - kw means KeywordList and can be set as `-kw snapchat tinder google facebook`.
-### Example
+## Example
 ```
 $ bash ./generate.sh dump
 ```
