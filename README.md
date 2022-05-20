@@ -9,15 +9,17 @@ $ bash ./generate.sh <output_filename>
 Press CTRL+C to stop the monitoring.
 ### Filter out
 ```
-$ python3 filter.py <output_filename_from_generate> <search_term>
+$ python3 filter.py -i <output_filename_from_generate> -kw <search_term1> <search_term2> <search_term3>
 ```
-where the searchTerm should be a string with the terms **separated by a comma (,)**. 
-
+where
+- i means inputFile name and can be set as `-i dump`
+- kw means KeywordList and can be set as `-kw snapchat tinder google facebook`.
 ### Example
 ```
 $ bash ./generate.sh dump
 ```
 Press CTRL+C
 ```
-$ python3 filter.py dump snapchat,tinder > domainList
+$ python3 filter.py -i "dump" -kw snapchat tinder > domainList
 ```
+-h parameter is available for list of options

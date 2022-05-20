@@ -1,7 +1,15 @@
+from email.policy import default
 import sys
 from dataclasses import dataclass, field
+import argparse
 
-args = sys.argv[1:]
+parser = argparse.ArgumentParser(
+    description='Find domain names from your monitored browsing.')
+parser.add_argument('-i', '--input', type=str, default='dump', required=True, help='Relative path of input file')
+parser.add_argument('-kw', '--keyword_list', nargs='+', default=[''], help='Searching parameters, default empty lists out every domain')
+
+args = parser.parse_args()
+
 
 
 @dataclass
@@ -12,10 +20,12 @@ class PackageItem:
 
 items: list[PackageItem] = []
 
-with open(args[0]) as f:
+with open(args.input) as f:
     lines = f.readlines()
     for l in lines:
-        for keyword in args[1].split(','):
+        for keyword in args.keyword_list:
+            # filter empty or incomplete rows
+            # filter outgoing packets, has no real data for us
             if keyword in l and (l.split('\t')[0] != '') and ('192' not in l.split('\t')[0]):
                 formattedLine = l.strip().split('\t')
                 # filter out empty empty columns
